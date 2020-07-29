@@ -13,7 +13,7 @@ const randomNumbers = (bids) => {
   getStandardDeviation(bidArray);
 
   console.log(`Highest bid: ${Math.max(...bidArray)}`);
-  console.log(`Highest bid: ${Math.min(...bidArray)}`);
+  console.log(`Lowest bid: ${Math.min(...bidArray)}`);
   return bidArray;
 };
 
@@ -63,11 +63,11 @@ function getStandardDeviation(bidArray) {
   const n = bidArray.length;
   const mean = parseFloat(bidArray.reduce((a, b) => a + b) / n).toFixed(2);
   let stddev = Math.sqrt(bidArray.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n);
-  console.log(`Eliminate anything over, or under ${mean} in this range: ${stddev}`);
+  console.log(`Standard deviation: ${stddev}`);
   return stddev;
 }
 
-randomNumbers(73996);
+randomNumbers(87);
 
 //eliminate any numbers greater than 1 standard deviation
 
